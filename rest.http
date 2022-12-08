@@ -1,0 +1,28 @@
+POST http://localhost:3001/todos/
+Content-Type: application/json
+
+{
+    "todo":"Have to complete this app anyhow",
+    "isCompleted":false
+}
+
+###
+PUT http://localhost:3001/todos/6391b7a961c61d606091a945
+Content-Type: application/json
+
+{
+    "todo":"Have to complete this app",
+    "isCompleted":true
+}
+
+###
+GET http://localhost:3001/todos/
+
+###
+PUT http://localhost:3001/todos/6391b7a961c61d606091a945
+
+###
+DELETE http://localhost:3001/todos/6391c44cc3c5dbe95395a496
+
+###
+GET http://localhost:3001/auth/
