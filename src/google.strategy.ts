@@ -13,7 +13,11 @@ export class GoogleStrategy extends PassportStrategy(Strategy, 'google') {
       clientID: process.env.GOOGLE_CLIENT_ID,
       clientSecret: process.env.GOOGLE_SECRET,
       callbackURL: 'http://localhost:3001/auth/redirect',
-      scope: ['email', 'profile'],
+      scope: [
+        'profile',
+        'email',
+        'https://www.googleapis.com/auth/contacts.readonly',
+      ],
     });
   }
 
@@ -31,6 +35,8 @@ export class GoogleStrategy extends PassportStrategy(Strategy, 'google') {
       picture: photos[0].value,
       accessToken,
     };
+    console.log(user);
+    // save user to mongodb and the getuser from mongodb and bgcolor
     done(null, user);
   }
 }
